@@ -2,9 +2,10 @@
 CHAIN_DATA=$1
 KEYS=$CHAIN_DATA/keys/PoA
 HOST=$2
-LOGS=$3
-PARITY=$4
-IDX=$5
+PORT=$3
+LOGS=$4
+PARITY=$5
+IDX=$6
 cd `dirname ${BASH_SOURCE-$0}`
 
 # remove chain data
@@ -14,4 +15,4 @@ mkdir -p $LOGS
 # copy keys
 cp keys/key* $KEYS/
 
-nohup ${PARITY} --config config.toml.$IDX --rpcport 8545 --rpcaddr $HOST > $LOGS/log 2>&1 & 
+nohup ${PARITY} --config config.toml.$IDX --rpcport $PORT --rpcaddr $HOST > $LOGS/log 2>&1 & 
