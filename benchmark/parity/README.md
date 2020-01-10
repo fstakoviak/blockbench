@@ -19,11 +19,12 @@ For more details, see https://github.com/ethcore/parity/wiki/Proof-of-Authority-
 
 ## Launch Parity server
 
-      `./start_parity.sh <data dir> <host/IP> <log dir> <parity binary> <host index>`
+      `./start_parity.sh <data dir> <host/IP> <port> <log dir> <parity binary> <host index>`
 
 where:
 + `<data dir>`: directory where chain data + keys are store. Make sure it is non-NFS
-+ `<host/IP`: IP address of the host. The RPC end point will be <hosts/IP>:8545
++ `<host/IP`: IP address of the host.
++ `<port>`: The port of the of the host. The RPC end point will be <hosts/IP>:<port>
 + `<parity binary>`: where the Parity executable is
 + `<host index>`: from 1 to `<#nodes>`
 
